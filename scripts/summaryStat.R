@@ -1,7 +1,5 @@
 install.packages("stargazer")
 library(stargazer)
-library(ggplot2)
-library(plotly)
 ### Everyone
 ##  * stargazer outputs latex tables from the summery tables.
 bplot.everyone <- analysis.final[,c("HINCP","JWRIP","atransit")]

@@ -5,8 +5,8 @@ library("ggplot2")
 library("data.table")
 
 ## Load the Data
-ACS <- read.csv("~/OneDrive/Work/JG/public_transit/Data/raw_data/ss14pca.csv", head = TRUE)
-HD <- read.csv("~/OneDrive/Work/JG/public_transit/Data/raw_data/ss14hca.csv", header = TRUE)
+ACS <- read.csv("~/Desktop/pums/ss14pca.csv", head = TRUE)
+HD <- read.csv("~/Desktop/pums/ss14hca.csv", header = TRUE)
 ## Clean the data to identify the counties
 ## 
 housing.data <- HD[(HD$PUMA == 7501 | # San Francisco
