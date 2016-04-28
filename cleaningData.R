@@ -128,21 +128,30 @@ county.data <- county.data[!(is.na(county.data$COW) | county.data$COW == 9),]
 ## creating data set to use for analysis
 analysis.data <- county.data[,c("SERIALNO","AGEP","COW","JWRIP","JWTR")]
 analysis.data2 <- housing.data[,c("SERIALNO","HINCP")]
-## merged data set.
+## merged data set by SERIALNO
 analysis.final <- merge(analysis.data,analysis.data2, by = "SERIALNO")
-## boolean column for alternative transit (Those that do not take a car/put "Other")
-analysis.final$atransit <- as.numeric(!(analysis.final$JWTR == 1 | analysis.final$JWTR == 12))
-## drop the NA's 
-analysis.final<- analysis.final[!(is.na(analysis.final$atransit)),]
-## Mode of Transportaion
-analysis.final$BusStr     <- as.numeric(analysis.final$JWTR == 2 | analysis.final$JWTR == 3) # Bus and Street Car
-analysis.final$SubRail    <- as.numeric(analysis.final$JWTR == 4 | analysis.final$JWTR == 5) # Subway and RaiRoad
-analysis.final$Ferry      <- as.numeric(analysis.final$JWTR == 6)  # Ferry
-analysis.final$taxi       <- as.numeric(analysis.final$JWTR == 7)  # Taxi
-analysis.final$motorcycle <- as.numeric(analysis.final$JWTR == 8)  # motorcycle
-analysis.final$bike       <- as.numeric(analysis.final$JWTR == 9)  # bicycle
-analysis.final$walk       <- as.numeric(analysis.final$JWTR == 10) # Walk
-analysis.final$athome     <- as.numeric(analysis.final$JWTR == 11) # At home
+## Every instance of NA for car use is replaced with a 0
+analysis.final[is.na(analysis.final$JWRIP),4] <- 0
+## 1 vehivle occupency and NA for public transport
+analysis.final <- analysis.final[((analysis.final$JWRIP == 1) | (analysis.final$JWRIP == 0)),]
+## remove HINC that are na
+analysis.final <- analysis.final[!is.na(analysis.final$HINC),]
+## remove means of transportation na's
+analysis.final <- analysis.final[!is.na(analysis.final$JWTR),]
+## boolean column for alternative transit 1 if indicated (Subway, Train, Bus, Bike,Worked at home)
+analysis.final$atransit <- as.numeric(!(analysis.final$JWTR == 1 |
+                                        analysis.final$JWTR == 12|
+                                        analysis.final$JWTR == 6 |
+                                        analysis.final$JWTR == 7 |
+                                        analysis.final$JWTR == 8|
+                                        analysis.final$JWTR == 10))
+## mode of transportation
+analysis.final$bus    <- as.numeric(analysis.final$JWTR == 2)
+analysis.final$SC     <- as.numeric(analysis.final$JWTR == 3)
+analysis.final$subway <- as.numeric(analysis.final$JWTR == 4)
+analysis.final$rail   <- as.numeric(analysis.final$JWTR == 5)
+analysis.final$bike   <- as.numeric(analysis.final$JWTR == 9)
+analysis.final$home   <- as.numeric(analysis.final$JWTR == 11)
 
 write.csv(analysis.final, "~/OneDrive/Work/JG/public_transit/Data/modified_data/analysis.final.csv")
 
