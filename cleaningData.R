@@ -145,6 +145,7 @@ analysis.final$atransit <- as.numeric(!(analysis.final$JWTR == 1 |
                                         analysis.final$JWTR == 7 |
                                         analysis.final$JWTR == 8|
                                         analysis.final$JWTR == 10))
+
 ## mode of transportation
 analysis.final$bus    <- as.numeric(analysis.final$JWTR == 2)
 analysis.final$SC     <- as.numeric(analysis.final$JWTR == 3)
