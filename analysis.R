@@ -1,7 +1,9 @@
 install.packages("stargazer")
 library(stargazer)
-stargazer(attitude)
 library(ggplot2)
+library(plotly)
+### Everyone
+##  * stargazer outputs latex tables from the summery tables.
 bplot.everyone <- analysis.final[,c("HINCP","JWRIP","atransit")]
 bplot.everyone <- bplot.everyone[which(bplot.everyone$JWRIP == 1 | bplot.everyone$atransit == 1),]
 stargazer(stargazer(bplot.everyone, 
