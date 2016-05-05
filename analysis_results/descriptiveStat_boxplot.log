@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  28 APR 2016 13:57
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  28 APR 2016 21:17
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -750,6 +750,18 @@ File: tikzlibrarytopaths.code.tex 2008/06/17 v3.0.0 (rcs-revision 1.2)
 
 LaTeX Warning: Label `' multiply defined.
 
+
+LaTeX Warning: Label `' multiply defined.
+
+
+LaTeX Warning: Label `' multiply defined.
+
+
+LaTeX Warning: Label `' multiply defined.
+
+
+LaTeX Warning: Label `' multiply defined.
+
 )
 \openout1 = `descriptiveStat_boxplot.aux'.
 
@@ -870,7 +882,7 @@ LaTeX Font Info:    Try loading font information for U+msb on input line 19.
 (/usr/local/texlive/2015/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-Overfull \hbox (47.02643pt too wide) in paragraph at lines 19--36
+Overfull \hbox (51.88757pt too wide) in paragraph at lines 19--39
  [][] 
  []
 
@@ -882,18 +894,18 @@ Package epstopdf Info: Source file: <Rplot.eps>
 (epstopdf)                    size: 76275 bytes
 (epstopdf)             Command: <repstopdf --outfile=Rplot-eps-converted-to.pdf
  Rplot.eps>
-(epstopdf)             \includegraphics on input line 39.
+(epstopdf)             \includegraphics on input line 42.
 Package epstopdf Info: Output file is already uptodate.
 <Rplot-eps-converted-to.pdf, id=4, 345.29pt x 324.21124pt>
 File: Rplot-eps-converted-to.pdf Graphic file (type pdf)
 
 <use Rplot-eps-converted-to.pdf>
-Package pdftex.def Info: Rplot-eps-converted-to.pdf used on input line 39.
+Package pdftex.def Info: Rplot-eps-converted-to.pdf used on input line 42.
 (pdftex.def)             Requested size: 345.28914pt x 324.21045pt.
  [1
 
 {/usr/local/texlive/2015/texmf-var/fonts/map/pdftex/updmap/pdftex.map} <./Rplot
--eps-converted-to.pdf>] [2]
+-eps-converted-to.pdf>] [2] [3]
 (./descriptiveStat_boxplot.aux)
 
 LaTeX Warning: There were multiply-defined labels.
@@ -902,7 +914,7 @@ LaTeX Warning: There were multiply-defined labels.
 Here is how much of TeX's memory you used:
  14824 strings out of 493089
  279803 string characters out of 6134842
- 327798 words of memory out of 5000000
+ 335798 words of memory out of 5000000
  18020 multiletter control sequences out of 15000+600000
  6290 words of font info for 25 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -910,13 +922,14 @@ Here is how much of TeX's memory you used:
 </usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb
 ></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb>
 </usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></
-usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></u
-sr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr
-/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb>
-Output written on descriptiveStat_boxplot.pdf (2 pages, 139159 bytes).
+usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr
+/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/
+local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/lo
+cal/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb>
+Output written on descriptiveStat_boxplot.pdf (3 pages, 149662 bytes).
 PDF statistics:
- 46 PDF objects out of 1000 (max. 8388607)
- 32 compressed objects within 1 object stream
+ 53 PDF objects out of 1000 (max. 8388607)
+ 37 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  18 words of extra memory for PDF output out of 10000 (max. 10000000)
 

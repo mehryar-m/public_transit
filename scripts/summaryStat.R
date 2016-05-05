@@ -58,3 +58,19 @@ stargazer(bplot.home,
           mean.sd = TRUE, median = TRUE,
           iqr = TRUE)
 
+bplot.motorcycle <- analysis.final[,c("HINCP","motorcycle")]
+bplot.motorcycle <- bplot.motorcycle[which(bplot.motorcycle$motorcycle == 1),]
+stargazer(bplot.motorcycle, 
+          mean.sd = TRUE, median = TRUE,
+          iqr = TRUE)
+bplot.walk <- analysis.final[,c("HINCP", "walk")]
+bplot.walk <- bplot.walk[which(bplot.walk$walk == 1),]
+stargazer(bplot.walk, 
+          mean.sd = TRUE, median = TRUE,
+          iqr = TRUE)
+
+bplot.taxi <- analysis.final[,c("HINCP", "taxi")]
+bplot.taxi <- bplot.taxi[which(bplot.taxi$taxi == 1),]
+stargazer(bplot.taxi, 
+          mean.sd = TRUE, median = TRUE,
+          iqr = TRUE)

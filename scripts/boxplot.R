@@ -40,7 +40,23 @@ bplot.home$type <- "home"
 long.home <- melt(bplot.home, id = c("type"))
 long.home <- long.home[which(long.home$variable == "HINCP"),]
 
-all <- rbind(long.car, long.atransit, long.bus, long.SC, long.subway, long.rail, long.bike, long.home)
+## motorocycle
+bplot.motorcycle$type <- "motor"
+long.motorcycle <- melt(bplot.motorcycle, id = ("type"))
+long.motorcycle <- long.motorcycle[which(long.motorcycle$variable == "HINCP"),]
+ggplot(long.motorcycle, aes(type,value)) + geom_boxplot()
+
+## walk
+bplot.walk$type <- "walk"
+long.walk <- melt(bplot.walk, id =("type"))
+long.walk <- long.walk[which(long.walk$variable == "HINCP"),]
+
+## taxicab
+bplot.taxi$type <- "taxi"
+long.taxi <- melt(bplot.taxi, id=("type"))
+long.taxi <- long.taxi[which(long.taxi$variable == "HINCP")]
+
+all <- rbind(long.car, long.atransit, long.bus, long.SC, long.subway, long.rail, long.bike, long.home, long.motorcycle, long.walk, long.taxi)
 all <- all[,c("type","value")]
 all <- rename(all,c(type = "motransportation", value = "Income"))
 ggplot(all, aes(motransportation,Income)) + geom_boxplot()

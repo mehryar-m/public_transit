@@ -140,11 +140,7 @@ analysis.final <- analysis.final[!is.na(analysis.final$HINC),]
 analysis.final <- analysis.final[!is.na(analysis.final$JWTR),]
 ## boolean column for alternative transit 1 if indicated (Subway, Train, Bus, Bike,Worked at home)
 analysis.final$atransit <- as.numeric(!(analysis.final$JWTR == 1 |
-                                        analysis.final$JWTR == 12|
-                                        analysis.final$JWTR == 6 |
-                                        analysis.final$JWTR == 7 |
-                                        analysis.final$JWTR == 8|
-                                        analysis.final$JWTR == 10))
+                                        analysis.final$JWTR == 8))
 
 ## mode of transportation
 analysis.final$bus    <- as.numeric(analysis.final$JWTR == 2)
@@ -153,7 +149,12 @@ analysis.final$subway <- as.numeric(analysis.final$JWTR == 4)
 analysis.final$rail   <- as.numeric(analysis.final$JWTR == 5)
 analysis.final$bike   <- as.numeric(analysis.final$JWTR == 9)
 analysis.final$home   <- as.numeric(analysis.final$JWTR == 11)
+analysis.final$walk   <- as.numeric(analysis.final$JWTR == 10)
+analysis.final$taxi   <- as.numeric(analysis.final$JWTR == 7)
+analysis.final$ferry  <- as.numeric(analysis.final$JWTR == 6)
+analysis.final$other  <- as.numeric(analysis.final$JWTR == 12)
 
+analysis.final$motorcycle <- as.numeric(analysis.final$JWTR == 8)
 write.csv(analysis.final, "~/OneDrive/Work/JG/public_transit/Data/modified_data/analysis.final.csv")
 
 
